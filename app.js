@@ -15,10 +15,11 @@ $(document).ready(function(){
             // (293K − 273.15) × 9/5 + 32 = 67.73°F
             var kelvin = res.main.temp
             var far = Math.floor(1.8*(kelvin-273) + 32) 
-            // var time = res.sys.sunrise.toTimeString()
+            var icon = `http://openweathermap.org/img/wn/${res.weather[0].icon}.png`
 
             var html_str ='';
-            html_str += `<h3> ${res.name}: ${res.weather[0].description} </h3>`
+            html_str += `<h3> ${res.name}: ${res.weather[0].description} <img src="${icon}" /> </h3>`
+            
             html_str += `<h3> Temperature: ${far} &#8457;</h3>`
             html_str +=`<h3> Coordinates: Long: ${res.coord.lon}  and Lang: ${res.coord.lat}</h3>`
             // html_str +=`<h3> Sunrise  ${time}</h3>`
