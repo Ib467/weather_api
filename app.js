@@ -24,6 +24,16 @@ $(document).ready(function(){
             html_str +=`<h3> Coordinates: Long: ${res.coord.lon}  and Lang: ${res.coord.lat}</h3>`
             // html_str +=`<h3> Sunrise  ${time}</h3>`
 
+
+            html_str = `<h3 class="card-header">Open Weather</h3>
+            <div class="card-body">
+              <h5 class="card-title">${res.name}: ${res.weather[0].description} </h5>
+              <p class="card-text">Temperture: ${far}</p>
+              <p class="card-text"> Coordinates:  Long: ${res.coord.lon}  and Lang: ${res.coord.lat} </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>`
+
+
             $('.weather').html(html_str)
 
 
