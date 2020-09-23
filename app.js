@@ -25,13 +25,34 @@ $(document).ready(function(){
             // html_str +=`<h3> Sunrise  ${time}</h3>`
 
 
-            html_str = `<h3 class="card-header">Open Weather</h3>
-            <div class="card-body">
-              <h5 class="card-title">${res.name}: ${res.weather[0].description} </h5>
-              <p class="card-text">Temperture: ${far}</p>
-              <p class="card-text"> Coordinates:  Long: ${res.coord.lon}  and Lang: ${res.coord.lat} </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>`
+            // html_str = `<h3 class="card-header">Open Weather</h3>
+            // <div class="card-body">
+            //   <h5 class="card-title">${res.name}: ${res.weather[0].description} </h5>
+            //   <p class="card-text">Temperture: ${far}</p>
+            //   <p class="card-text"> Coordinates:  Long: ${res.coord.lon}  and Lang: ${res.coord.lat} </p>
+            //   <a href="#" class="btn btn-primary">Go somewhere</a>
+            // </div>`
+
+            
+
+            html_str=` <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title"> ${res.name}: ${res.weather[0].description}</p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                                </a>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                   <p class="card-text">Temperture: ${far}</p>
+
+                                <p class="card-text"> Coordinates:  Long: ${res.coord.lon}  and Lang: ${res.coord.lat} </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div>`
+
 
 
             $('.weather').html(html_str)
